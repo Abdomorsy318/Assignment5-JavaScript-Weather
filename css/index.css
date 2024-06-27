@@ -1,0 +1,175 @@
+:root{
+    --main-font-family : "Roboto" , "Open Sans" , sans-serif
+}
+.color-toggler{
+    color: #FFF;
+    padding-block: 20px;
+    padding-inline: 10px;
+    transition: all 0.3s;
+}
+.border-toggler{
+    --bs-navbar-color:#FFF;
+    border-radius: 50%;
+    --bs-border-width:5px;
+    --bs-navbar-toggler-border-color: transparent;
+    transition: all 0.3s;
+}
+.border-toggler:hover , .border-toggler:hover .color-toggler{
+    --bs-navbar-color:#009ad8;
+    --bs-navbar-toggler-border-color: #009ad8;
+    color: #009ad8;
+}
+.text-logo a{
+    font-family: var(--main-font-family);
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: normal;
+    color:#FFF ;
+}
+.text-logo small{
+    font-family: var(--main-font-family);
+    font-weight: 300;
+    font-size: .625rem;
+    line-height: .9375rem;
+    color:#bfc1c8 ;
+}
+.nav-item .active{
+    border-color: #009ad8;
+    border-width: 2px;
+    --bs-navbar-active-color: #009ad8;
+}
+.nav-item a{
+    margin-left: 10px;
+    --bs-nav-link-color: #FFF;
+    border: 2px solid transparent;
+    border-radius: 30px;
+    --bs-navbar-nav-link-padding-x: 25px;
+    padding-block: 1px;
+    transition: all 0.3s;
+    font-family: var(--main-font-family);
+    font-weight: 400;
+    font-size: 0.875rem;
+}
+.nav-item a:hover{
+    border: 2px solid #009ad8;
+    border-radius: 30px;
+    --bs-navbar-nav-link-padding-x: 25px;
+    --bs-nav-link-hover-color: #009ad8;
+}
+.bg-nav{
+    background-color: #1E202B;
+}
+
+.bg-img{
+    background-image: url(../images/banner.png);
+    background-position: center center;
+    background-size: cover;
+    min-height: 350px;
+    overflow: auto;
+}
+input{
+    border-width: 0;
+    caret-color: #FFF;
+    color: #FFF;
+}
+input:focus{
+    outline: 0;
+    border-width: 0;
+}
+
+
+.btn{
+    position: absolute;
+    right: 10px;
+    top: 7px;
+    --bs-btn-padding-x: 2rem;
+    --bs-btn-padding-y: 0.5rem;
+    --bs-btn-border-radius: 2.5rem
+}
+.btn-bg{
+    --bs-btn-bg: #009AD8;
+    --bs-btn-hover-bg: #009AD8;
+}
+.bg-main{
+    background-color: #1E202B;
+    min-height: 300px;
+}
+.degree-weather , .degree-weather-second-day , .degree-weather-third-day{
+    height: 380px;
+}
+.top-card , .top-card-third-day{
+    background-color: #2D303D;
+    color: #BEC0C7;
+}
+
+.degree-weather{
+    background-color: #323544;
+    color: #BEC0C7;
+    font-family: var(--main-font-family);
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 1.6875rem;
+}
+.degree-weather h1{
+    color: #FFF;
+    font-family: var(--main-font-family);
+    font-weight: 700;
+    font-size: 5.8rem;
+    line-height: 8.4375rem;
+}
+.degree-weather .footer{
+    color: #009AD8;
+    font-size: 14px;
+    font-weight: 300;
+}
+.footer-img .fm img{
+    width: 20px;
+}
+
+.top-card-second-day{
+    background-color: #222531;
+    color: #BEC0C7;
+}
+.degree-weather-second-day{
+    background-color: #262936;
+    color: #FFF;
+}
+
+.degree-weather-third-day{
+    background-color: #323544;
+    color: #FFF;
+}
+
+.degree-weather-second-day .footer, .degree-weather-third-day .footer{
+    color: #009AD8;
+}
+
+.parent-weather{
+    position: relative;
+    transform: translateY(-130px);
+}
+
+.bg-footer{
+    background-color: #262936;
+}
+
+.bg-parag{
+    color: #BEC0C7;
+}
+.icons li{
+    background-color: #1E202B;
+    color: #177BD2;
+    padding: 15px;
+    width: 45px;
+    border-radius: 50%;
+    margin-right: 15px;
+    list-style: none;
+    transition: all 0.3s;
+}
+.icons li:hover{
+    background-color: #009AD8;
+    color: #FFF;
+}
+.icons{
+    height: 30px;
+}
