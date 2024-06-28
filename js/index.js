@@ -13,9 +13,10 @@ async function weather(location){
 
 function displayWeather(){
     try {
-        let md = new Date();
+    let md = new Date();
     const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    let day = days[md.getDay()]
+    let currentDayNum = md.getDay();
+    let day = days[currentDayNum]
     let numDay = md.getDate()
     const months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"];
     let month = months[md.getMonth()]
@@ -29,10 +30,10 @@ function displayWeather(){
     `;
     document.getElementById("status-weather").innerHTML = `<span>${data.current.condition.text}</span>`
     /* --------------------------------------------------- */
-    if(md.getDay() + 1 > 6)
+    if(currentDayNum == 6)
         day = days[0]
     else
-        day = days[md.getDay() + 1]
+        day = days[currentDayNum + 1]
     document.getElementById("name-second-day").innerHTML = day;
     document.getElementById("second-day").innerHTML = 
     `
@@ -42,10 +43,12 @@ function displayWeather(){
     `
     document.getElementById("status-second-day").innerHTML = `${data.forecast.forecastday[1].day.condition.text}`
     /* --------------------------------------------- */
-    if(md.getDay() + 2 > 6)
+    if(currentDayNum == 6)
+        day = days[1]
+    else if(currentDayNum + 2 > 6 && currentDayNum != 6)
         day = days[0]
     else
-        day = days[md.getDay() + 2]
+        day = days[currentDayNum + 2]
     document.getElementById("name-third-day").innerHTML = day; 
     document.getElementById("third-day").innerHTML = 
     `
