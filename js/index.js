@@ -29,7 +29,10 @@ function displayWeather(){
     `;
     document.getElementById("status-weather").innerHTML = `<span>${data.current.condition.text}</span>`
     /* --------------------------------------------------- */
-    day = days[md.getDay() + 1]
+    if(md.getDay() + 1 > 6)
+        day = days[0]
+    else
+        day = days[md.getDay() + 1]
     document.getElementById("name-second-day").innerHTML = day;
     document.getElementById("second-day").innerHTML = 
     `
@@ -39,7 +42,10 @@ function displayWeather(){
     `
     document.getElementById("status-second-day").innerHTML = `${data.forecast.forecastday[1].day.condition.text}`
     /* --------------------------------------------- */
-    day = days[md.getDay() + 2]
+    if(md.getDay() + 2 > 6)
+        day = days[0]
+    else
+        day = days[md.getDay() + 2]
     document.getElementById("name-third-day").innerHTML = day; 
     document.getElementById("third-day").innerHTML = 
     `
