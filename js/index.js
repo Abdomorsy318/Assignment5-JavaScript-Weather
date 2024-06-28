@@ -45,7 +45,7 @@ function displayWeather(){
     /* --------------------------------------------- */
     if(currentDayNum == 6)
         day = days[1]
-    else if(currentDayNum + 2 > 6 && currentDayNum != 6)
+    else if(currentDayNum + 2 > 6)
         day = days[0]
     else
         day = days[currentDayNum + 2]
