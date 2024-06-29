@@ -14,12 +14,9 @@ async function weather(location){
 function displayWeather(){
     try {
     let md = new Date();
-    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    let currentDayNum = md.getDay();
-    let day = days[currentDayNum]
+    let day = md.toLocaleDateString("en-US" , {weekday :"long"})
+    let month = md.toLocaleDateString("en-US" , {month :"short"})
     let numDay = md.getDate()
-    const months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"];
-    let month = months[md.getMonth()]
     /* ---------------------------------------- */
     document.getElementById("name-currnt-day").innerHTML = day;
     document.getElementById("name-currnt-month").innerHTML =`${numDay} ${month}` ;
@@ -30,10 +27,9 @@ function displayWeather(){
     `;
     document.getElementById("status-weather").innerHTML = `<span>${data.current.condition.text}</span>`
     /* --------------------------------------------------- */
-    if(currentDayNum == 6)
-        day = days[0]
-    else
-        day = days[currentDayNum + 1]
+    let forcatedate = data.forecast.forecastday
+    let next = new Date(forcatedate[1].date)
+    day = next.toLocaleDateString("en-US" , {weekday :"long"}) 
     document.getElementById("name-second-day").innerHTML = day;
     document.getElementById("second-day").innerHTML = 
     `
@@ -43,12 +39,8 @@ function displayWeather(){
     `
     document.getElementById("status-second-day").innerHTML = `${data.forecast.forecastday[1].day.condition.text}`
     /* --------------------------------------------- */
-    if(currentDayNum == 6)
-        day = days[1]
-    else if(currentDayNum + 2 > 6)
-        day = days[0]
-    else
-        day = days[currentDayNum + 2]
+    next = new Date(forcatedate[2].date)
+    day = next.toLocaleDateString("en-US" , {weekday :"long"})
     document.getElementById("name-third-day").innerHTML = day; 
     document.getElementById("third-day").innerHTML = 
     `
